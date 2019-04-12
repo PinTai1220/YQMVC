@@ -12,7 +12,7 @@ namespace YQMVC.Controllers
     public class OrderController : Controller
     {
         // GET: Order
-        public ActionResult Index()
+        public ActionResult Show()
         {
             return View();
         }

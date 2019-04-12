@@ -207,12 +207,12 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Order\Show.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Admin\" />
     <Folder Include="Views\Money\" />
-    <Folder Include="Views\Order\" />
     <Folder Include="Views\Roles\" />
     <Folder Include="Views\Rooms\" />
     <Folder Include="Views\RoomType\" />
