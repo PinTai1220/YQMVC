@@ -21,7 +21,7 @@ namespace YQMVC.Helper
         {
             HttpClient client = new HttpClient();
 
-            client.BaseAddress = new Uri(""); //设置http请求的地址
+            client.BaseAddress = new Uri("http://localhost:54830/"); //设置http请求的地址
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));//设置请求的数据传输格式
 
             HttpContent content = new StringContent(data);

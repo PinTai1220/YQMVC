@@ -12,8 +12,9 @@ namespace YQMVC.Controllers
     public class UserInfoController : Controller
     {
         // GET: UserInfo
-        public ActionResult Index()
+        public ActionResult UserInfoIndex()
         {
+
             return View();
         }
     }

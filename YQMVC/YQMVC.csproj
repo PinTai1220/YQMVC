@@ -900,6 +900,7 @@
     <Content Include="Views\Shared\_ParentPage1.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\UserInfo\UserInfoIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -917,7 +918,6 @@
     <Folder Include="Views\Roles\" />
     <Folder Include="Views\Rooms\" />
     <Folder Include="Views\RoomType\" />
-    <Folder Include="Views\UserInfo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
