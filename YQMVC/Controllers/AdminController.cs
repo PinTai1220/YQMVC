@@ -11,8 +11,9 @@ namespace YQMVC.Controllers
     /// </summary>
     public class AdminController : Controller
     {
+        //登录
         // GET: Admin
-        public ActionResult Index()
+        public ActionResult Login()
         {
             return View();
         }
