@@ -26,13 +26,19 @@ namespace YQMVC.Helper
 
             client.BaseAddress = new Uri("http://localhost:54830/"); //设置http请求的地址
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));//设置请求的数据传输格式
+          
+            #region 自定义请求头
+            {
+                client.DefaultRequestHeaders.Add("timestamp", timestamp);
+                client.DefaultRequestHeaders.Add("nonce", nonce);
+                client.DefaultRequestHeaders.Add("signature", signature);
+            }
+            #endregion
 
             HttpContent content = new StringContent(data);
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");//设置发送的数据格式
             
-            content.Headers.Add("timestamp", timestamp);
-            content.Headers.Add("nonce", nonce);
-            content.Headers.Add("signature", signature);
+
 
             var strVal = "";
 

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Web;
+using System.Web.Security;
 
 namespace YQMVC.Models
 {
@@ -28,7 +29,7 @@ namespace YQMVC.Models
         public static string GetTimeStamp()
         {
             TimeSpan ts = DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0);
-            return Convert.ToInt64(ts.TotalSeconds).ToString();
+            return Convert.ToInt64(ts.TotalMilliseconds).ToString();
         }
 
         /// <summary>
@@ -68,14 +69,12 @@ namespace YQMVC.Models
         /// <param name="timestamp">时间戳</param>
         /// <param name="nonce">随机数</param>
         /// <returns></returns>
-        public static string GetMD5Staff(Dictionary<string, string> queryData)
+        public static string GetMD5Staff(Dictionary<string, string> queryData,string timestamp,string nonce)
         {
             string staffId = "^***********************************$";       // 密钥
             string data = DictionaryOrderWithData(queryData);
-            string timestamp = GetTimeStamp();
-            int nonce = GetNonce();
             string str = timestamp + nonce + staffId + data;
-            string result = str.CalcMD5().ToUpper();
+            string result = FormsAuthentication.HashPasswordForStoringInConfigFile(str, "MD5").ToUpper();
             return result;
         }
 
