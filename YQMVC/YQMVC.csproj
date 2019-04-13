@@ -47,10 +47,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DataTransfer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\DataTransfer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -166,6 +162,7 @@
     </Compile>
     <Compile Include="Helper\HttpClientHelper.cs" />
     <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\DataTransfer.cs" />
     <Compile Include="Models\Orders.cs" />
     <Compile Include="Models\Roles.cs" />
     <Compile Include="Models\Rooms.cs" />
