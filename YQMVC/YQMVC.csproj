@@ -902,6 +902,7 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\Login.cshtml" />
     <Content Include="Views\UserInfo\UserInfoIndex.cshtml" />
+    <Content Include="Views\Order\Show.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -915,7 +916,6 @@
     <Folder Include="MoBanJS\plugins\data-tables\images\js\sparkline\" />
     <Folder Include="MoBanJS\plugins\noty-master\js\" />
     <Folder Include="Views\Money\" />
-    <Folder Include="Views\Order\" />
     <Folder Include="Views\Roles\" />
     <Folder Include="Views\Rooms\" />
     <Folder Include="Views\RoomType\" />
