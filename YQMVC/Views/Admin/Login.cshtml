@@ -38,17 +38,17 @@
                             <h3>请登录<a href="#"></a></h3>
                             <div class="row">
                             </div>
-                            <form role="form">
+                            <form role="form" action="/Admin/Login">
                                 <div class="form-group">
-                                    <label for="inputUsernameEmail">用户名</label>
+                                    <label for="inputUsernameEmail" name="userName">用户名</label>
                                     <input type="text" class="form-control" id="inputUsernameEmail">
                                 </div>
                                 <div class="form-group">
                                     <label for="inputPassword">密码</label>
-                                    <input type="password" class="form-control" id="inputPassword">
+                                    <input type="password" class="form-control" id="inputPassword" name="pwd">
                                 </div>
                                 <div class="pull-left pad-btm">
-                                    
+
                                 </div>
                                 <button type="submit" class="btn btn btn-primary pull-right">
                                     登入
@@ -61,10 +61,12 @@
                 </div>
             </div>
         </div>
-        <script src="~/MoBanJS/js/jquery-2.1.1.min.js"></script>
-        <script src="~/MoBanJS/js/bootstrap.min.js"></script>
-        <script src="~/MoBanJS/plugins/fast-click/fastclick.min.js"></script>
-        <script src="~/MoBanJS/plugins/switchery/switchery.min.js"></script>
-        <script src="~/MoBanJS/plugins/bootstrap-select/bootstrap-select.min.js"></script>
+    </div>
 </body>
 </html>
+
+<script src="~/MoBanJS/js/jquery-2.1.1.min.js"></script>
+<script src="~/MoBanJS/js/bootstrap.min.js"></script>
+<script src="~/MoBanJS/plugins/fast-click/fastclick.min.js"></script>
+<script src="~/MoBanJS/plugins/switchery/switchery.min.js"></script>
+<script src="~/MoBanJS/plugins/bootstrap-select/bootstrap-select.min.js"></script>

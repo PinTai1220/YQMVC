@@ -17,16 +17,16 @@ namespace YQMVC.Controllers
     {
         //登录
         // GET: Admin
-        public ActionResult Login()
-        {
-            Dictionary<string, string> datas = new Dictionary<string, string>();
-            string signature = DataTransfer.DataTransfer.GetMD5Staff(datas);       // 获得公钥
-            int nonce = DataTransfer.DataTransfer.GetNonce();            // 获取随机数
-            string timestamp = DataTransfer.DataTransfer.GetTimeStamp();        // 获取时间戳
-            HttpClientHelper.SendRequest("", "", timestamp, nonce.ToString(), signature, "");
+        //public ActionResult Login()
+        //{
+        //    Dictionary<string, string> datas = new Dictionary<string, string>();
+        //    string signature = DataTransfer.DataTransfer.GetMD5Staff(datas);       // 获得公钥
+        //    int nonce = DataTransfer.DataTransfer.GetNonce();            // 获取随机数
+        //    string timestamp = DataTransfer.DataTransfer.GetTimeStamp();        // 获取时间戳
+        //    HttpClientHelper.SendRequest("", "", timestamp, nonce.ToString(), signature, "");
 
-            return View();
-        }
+        //    return View();
+        //}
 
         /// <summary>
         /// 用户登录
