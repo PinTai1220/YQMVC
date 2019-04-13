@@ -17,9 +17,10 @@ namespace YQMVC.Controllers
         // GET: UserInfo
         public ActionResult UserInfoIndex()
         {
-            string json = HttpClientHelper.SendRequest("http://localhost:54830/api/UserInfos/Show", "get");
-            List<UserInfos> ulist = JsonConvert.DeserializeObject<List<UserInfos>>(json); ;
-            return View(ulist);
+            //string json = HttpClientHelper.SendRequest("http://localhost:54830/api/UserInfos/Show", "get");
+            //List<UserInfos> ulist = JsonConvert.DeserializeObject<List<UserInfos>>(json); ;
+            //return View(ulist);
+            return View();
         }
     }
 }

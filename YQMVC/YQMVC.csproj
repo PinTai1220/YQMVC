@@ -47,6 +47,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DataTransfer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DataTransfer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -403,7 +407,6 @@
     <Content Include="MoBanJS\plugins\jquery-nestable\jquery.nestable.js" />
     <Content Include="MoBanJS\plugins\jquery-nestable\jquery.nestable.min.css" />
     <Content Include="MoBanJS\plugins\jquery-nestable\jquery.nestable.min.js" />
-    <Content Include="MoBanJS\plugins\jquery-print\.gitignore" />
     <Content Include="MoBanJS\plugins\jquery-print\demo\css\normalize.min.css" />
     <Content Include="MoBanJS\plugins\jquery-print\demo\index.html" />
     <Content Include="MoBanJS\plugins\jquery-print\demo\js\vendor\html5-3.6-respond-1.1.0.min.js" />
@@ -537,8 +540,6 @@
     <Content Include="MoBanJS\plugins\masked-input\bootstrap-inputmask.min.js" />
     <Content Include="MoBanJS\plugins\masked-input\jquery.maskedinput.js" />
     <Content Include="MoBanJS\plugins\masked-input\jquery.maskedinput.min.js" />
-    <Content Include="MoBanJS\plugins\metismenu\.gitattributes" />
-    <Content Include="MoBanJS\plugins\metismenu\.gitignore" />
     <Content Include="MoBanJS\plugins\metismenu\dist\metisMenu.css" />
     <Content Include="MoBanJS\plugins\metismenu\dist\metisMenu.js" />
     <Content Include="MoBanJS\plugins\metismenu\dist\metisMenu.min.css" />
@@ -564,8 +565,6 @@
     <Content Include="MoBanJS\plugins\morris-js\morris.min.css" />
     <Content Include="MoBanJS\plugins\morris-js\morris.min.js" />
     <Content Include="MoBanJS\plugins\morris-js\raphael-js\raphael.min.js" />
-    <Content Include="MoBanJS\plugins\nanoscrollerjs\.gitattributes" />
-    <Content Include="MoBanJS\plugins\nanoscrollerjs\.gitignore" />
     <Content Include="MoBanJS\plugins\nanoscrollerjs\bin\css\main.css" />
     <Content Include="MoBanJS\plugins\nanoscrollerjs\bin\css\nanoscroller.css" />
     <Content Include="MoBanJS\plugins\nanoscrollerjs\bin\css\style.css" />
@@ -615,7 +614,6 @@
     <Content Include="MoBanJS\plugins\nanoscrollerjs\tests\spec\fixtures\nano-no-content.html" />
     <Content Include="MoBanJS\plugins\nanoscrollerjs\tests\spec\nano-spec.js" />
     <Content Include="MoBanJS\plugins\nanoscrollerjs\_SpecRunner.html" />
-    <Content Include="MoBanJS\plugins\noty-master\.gitignore" />
     <Content Include="MoBanJS\plugins\noty-master\demo\allLayouts.html" />
     <Content Include="MoBanJS\plugins\noty-master\demo\allTypes.html" />
     <Content Include="MoBanJS\plugins\noty-master\demo\animate.css" />
@@ -825,9 +823,12 @@
     <Content Include="MoBanJS\plugins\fooTable\css\fonts\footabled41d.eot" />
     <Content Include="MoBanJS\plugins\gamma-gallery\css\.DS_Store" />
     <Content Include="MoBanJS\plugins\gmaps\gmaps.min.js.map" />
+    <Content Include="MoBanJS\plugins\jquery-print\.gitignore" />
     <Content Include="MoBanJS\plugins\jquery-print\bower.json" />
     <Content Include="MoBanJS\plugins\jquery-print\README.md" />
     <Content Include="MoBanJS\plugins\metismenu\.eslintrc.json" />
+    <Content Include="MoBanJS\plugins\metismenu\.gitattributes" />
+    <Content Include="MoBanJS\plugins\metismenu\.gitignore" />
     <Content Include="MoBanJS\plugins\metismenu\.travis.yml" />
     <Content Include="MoBanJS\plugins\metismenu\.verb.md" />
     <Content Include="MoBanJS\plugins\metismenu\.versions" />
@@ -838,6 +839,8 @@
     <Content Include="MoBanJS\plugins\metismenu\package.json" />
     <Content Include="MoBanJS\plugins\metismenu\README.md" />
     <Content Include="MoBanJS\plugins\nanoscrollerjs\.csslintrc" />
+    <Content Include="MoBanJS\plugins\nanoscrollerjs\.gitattributes" />
+    <Content Include="MoBanJS\plugins\nanoscrollerjs\.gitignore" />
     <Content Include="MoBanJS\plugins\nanoscrollerjs\bin\css\nanoscroller.less" />
     <Content Include="MoBanJS\plugins\nanoscrollerjs\bin\css\nanoscroller.scss" />
     <Content Include="MoBanJS\plugins\nanoscrollerjs\bin\javascripts\jquery.nanoscroller.js.map" />
@@ -854,6 +857,7 @@
     <Content Include="MoBanJS\plugins\nanoscrollerjs\README.md" />
     <Content Include="MoBanJS\plugins\nanoscrollerjs\tests\coffeescripts\nano-spec.coffee" />
     <Content Include="MoBanJS\plugins\nanoscrollerjs\tests\lib\jasmine-1.3.1\MIT.LICENSE" />
+    <Content Include="MoBanJS\plugins\noty-master\.gitignore" />
     <Content Include="MoBanJS\plugins\noty-master\bower.json" />
     <Content Include="MoBanJS\plugins\noty-master\composer.json" />
     <Content Include="MoBanJS\plugins\noty-master\demo\font-awesome\fonts\fontawesome-webfont.eot" />
@@ -933,10 +937,10 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="MoBanJS\plugins\metismenu\metismenu.d.ts" />
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <TypeScriptCompile Include="MoBanJS\plugins\metismenu\metismenu.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
