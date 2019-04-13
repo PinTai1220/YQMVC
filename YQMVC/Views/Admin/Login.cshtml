@@ -1,0 +1,72 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width" />
+    <title>登录页面</title>
+    <link rel="shortcut icon" href="~/MoBanJS/img/favicon.ico">
+    <link href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:500,400italic,100,700italic,300,700,500italic,400" rel="stylesheet">
+    <link href="~/MoBanJS/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/MoBanJS/css/style.css" rel="stylesheet">
+    <link href="~/MoBanJS/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/MoBanJS/plugins/switchery/switchery.min.css" rel="stylesheet">
+    <link href="~/MoBanJS/plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
+    <link href="~/MoBanJS/css/demo/jasmine.css" rel="stylesheet">
+    <link href="~/MoBanJS/plugins/pace/pace.min.css" rel="stylesheet">
+    <script src="~/MoBanJS/plugins/pace/pace.min.js"></script>
+
+    <title>Login</title>
+</head>
+<body>
+    <div id="container">
+        <!-- LOGIN FORM -->
+        <!--===================================================-->
+        <div class="lock-wrapper">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="lock-box">
+                        <div class="main">
+                            <h4>缘启酒店管理系统</h4>
+                            <h3>请登录<a href="#"></a></h3>
+                            <div class="row">
+                            </div>
+                            <form role="form" action="/Admin/Login">
+                                <div class="form-group">
+                                    <label for="inputUsernameEmail" name="userName">用户名</label>
+                                    <input type="text" class="form-control" id="inputUsernameEmail">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword">密码</label>
+                                    <input type="password" class="form-control" id="inputPassword" name="pwd">
+                                </div>
+                                <div class="pull-left pad-btm">
+
+                                </div>
+                                <button type="submit" class="btn btn btn-primary pull-right">
+                                    登入
+                                </button>
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="~/MoBanJS/js/jquery-2.1.1.min.js"></script>
+<script src="~/MoBanJS/js/bootstrap.min.js"></script>
+<script src="~/MoBanJS/plugins/fast-click/fastclick.min.js"></script>
+<script src="~/MoBanJS/plugins/switchery/switchery.min.js"></script>
+<script src="~/MoBanJS/plugins/bootstrap-select/bootstrap-select.min.js"></script>

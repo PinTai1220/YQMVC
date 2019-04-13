@@ -10,22 +10,28 @@ namespace YQMVC.Helper
 {
     public class HttpClientHelper
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="url"></param>
-        /// <param name="method"></param>
-        /// <param name="data">json字符串格式数据</param>
-        /// <returns></returns>
-        public static string SendRequest(string url, string method, string data="")
+       /// <summary>
+       /// 
+       /// </summary>
+       /// <param name="url">访问的路径</param>
+       /// <param name="method">访问的方法</param>
+       /// <param name="timestamp">时间戳</param>
+       /// <param name="nonce">随机数</param>
+       /// <param name="signature">公钥</param>
+       /// <param name="data">传输的数据</param>
+       /// <returns></returns>
+        public static string SendRequest(string url, string method, string timestamp, string nonce, string signature, string data = "")
         {
             HttpClient client = new HttpClient();
 
-            client.BaseAddress = new Uri(""); //设置http请求的地址
+            client.BaseAddress = new Uri("http://localhost:54830/"); //设置http请求的地址
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));//设置请求的数据传输格式
 
             HttpContent content = new StringContent(data);
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");//设置发送的数据格式
+            content.Headers.Add("timestamp", timestamp);
+            content.Headers.Add("nonce", nonce);
+            content.Headers.Add("signature", signature);
 
             var strVal = "";
 
@@ -38,10 +44,10 @@ namespace YQMVC.Helper
                     break;
                 case "post":
                     //接收http请求返回的结果信息
-                     response = client.PostAsync(url, content).Result;
+                    response = client.PostAsync(url, content).Result;
                     break;
                 case "put":
-                     response = client.PutAsync(url, content).Result;
+                    response = client.PutAsync(url, content).Result;
                     break;
                 case "delete":
                     response = client.DeleteAsync(url).Result;
