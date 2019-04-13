@@ -28,6 +28,11 @@ namespace YQMVC.Controllers
         //    return View();
         //}
 
+        public ActionResult Index()
+        {
+            return View();
+        }
+
         /// <summary>
         /// 用户登录
         /// </summary>
@@ -45,10 +50,13 @@ namespace YQMVC.Controllers
             userName = userName.TrimStart(' ').TrimEnd(' ');
             pwd = pwd.TrimStart(' ').TrimEnd(' ');
             #region Api 验证必填信息
+            // 传入数据
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+            dic.Add("", "");
 
-            string signature = DataTransfer.DataTransfer.GetMD5Staff(null);       // 获得公钥
-            int nonce = DataTransfer.DataTransfer.GetNonce();            // 获取随机数
-            string timestamp = DataTransfer.DataTransfer.GetTimeStamp();        // 获取时间戳
+            string signature = DataTransfer.GetMD5Staff(dic);       // 获得公钥
+            int nonce = DataTransfer.GetNonce();            // 获取随机数
+            string timestamp = DataTransfer.GetTimeStamp();        // 获取时间戳
 
             #endregion
 

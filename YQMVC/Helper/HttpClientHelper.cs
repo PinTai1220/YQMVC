@@ -29,6 +29,7 @@ namespace YQMVC.Helper
 
             HttpContent content = new StringContent(data);
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");//设置发送的数据格式
+            
             content.Headers.Add("timestamp", timestamp);
             content.Headers.Add("nonce", nonce);
             content.Headers.Add("signature", signature);
