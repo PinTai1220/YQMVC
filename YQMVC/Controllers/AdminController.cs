@@ -17,5 +17,9 @@ namespace YQMVC.Controllers
         {
             return View();
         }
+        public ActionResult Index()
+        {
+            return View();
+        }
     }
 }
