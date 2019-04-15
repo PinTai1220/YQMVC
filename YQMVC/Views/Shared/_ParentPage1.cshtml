@@ -65,6 +65,19 @@
             </div>
         </header>
         <div class="boxed">
+            <div id="content-container">
+                <div id="page-content">
+                    <div class="row">
+                        <div class="eq-height">
+                            <div class="col-lg-6 eq-box-sm">
+                                <div class="panel" style="margin-top:100px">
+                                    @RenderBody()
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <nav id="mainnav-container">
                 <div class="navbar-header">
                     <a href="index.html" class="navbar-brand">
@@ -295,7 +308,6 @@
                     </div>
                 </div>
             </nav>
-            @RenderBody()
         </div>
     </div>
     <script src="~/MoBanJS/js/jquery-2.1.1.min.js"></script>
