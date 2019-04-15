@@ -23,7 +23,7 @@ namespace YQMVC.Controllers
             string nonce = DataTransfer.GetNonce().ToString();
             string timestamp = DataTransfer.GetTimeStamp();
             string signature = DataTransfer.GetMD5Staff(dic, timestamp, nonce);
-            string result = HttpClientHelper.SendRequest("api/Order/Show", "get", timestamp, nonce, signature, "");
+            string result = HttpClientHelper.SendRequest("api/Orders/Show", "get", timestamp, nonce, signature, "");
             List<Orders> list = JsonConvert.DeserializeObject<List<Orders>>(result);
             string result1 = HttpClientHelper.SendRequest("api/UserInfos/Show", "get", timestamp, nonce, signature, "");
             List<UserInfos> userinfos = JsonConvert.DeserializeObject<List<UserInfos>>(result1);
@@ -51,6 +51,6 @@ namespace YQMVC.Controllers
     {
         已预定=0,
         已入住=1,
-        未入住=3       
+        未入住=2       
     }
 }
