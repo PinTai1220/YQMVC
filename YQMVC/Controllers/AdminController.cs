@@ -15,26 +15,14 @@ namespace YQMVC.Controllers
     /// </summary>
     public class AdminController : Controller
     {
-        //登录
-        // GET: Admin
-        //public ActionResult Login()
-        //{
-        //    Dictionary<string, string> datas = new Dictionary<string, string>();
-        //    string signature = DataTransfer.DataTransfer.GetMD5Staff(datas);       // 获得公钥
-        //    int nonce = DataTransfer.DataTransfer.GetNonce();            // 获取随机数
-        //    string timestamp = DataTransfer.DataTransfer.GetTimeStamp();        // 获取时间戳
-        //    HttpClientHelper.SendRequest("", "", timestamp, nonce.ToString(), signature, "");
-
-        //    return View();
-        //}
-
+        //主页显示
         public ActionResult Index()
         {
             return View();
         }
 
         /// <summary>
-        /// 用户登录
+        /// 管理员登录
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -42,7 +30,7 @@ namespace YQMVC.Controllers
         {
             return View();
         }
-
+        //登录方法
         [HttpPost]
         public ActionResult Login(string userName, string pwd)
         {
