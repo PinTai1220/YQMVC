@@ -1,131 +1,128 @@
 ﻿
 @{
     ViewBag.Title = "Show";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_ParentPage1.cshtml";
 }
 
-<div class="row">
-    <div class="eq-height">
-        <div class="col-lg-6 eq-box-sm">
-            <div class="panel">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Sample Toolbar</h3>
-                </div>
-                <!--Data Table-->
-                <!--===================================================-->
-                <div class="panel-body">
-                    <div class="pad-btm form-inline">
-                        <div class="row">
-                            <div class="col-sm-6 table-toolbar-left">
-                                <div class="btn-group">
-                                    <button class="btn btn-default"><i class="fa fa-plus"></i></button>
-                                    <button class="btn btn-default"><i class="fa fa-print"></i></button>
-                                    <button class="btn btn-default"><i class="fa fa-exclamation-circle"></i></button>
-                                    <button class="btn btn-default"><i class="fa fa-trash"></i></button>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 table-toolbar-right">
-                                <div class="form-group">
-                                    <input id="demo-input-search2" type="text" placeholder="Search" class="form-control" autocomplete="off">
-                                </div>
-                                <div class="btn-group">
-                                    <button class="btn btn-default"><i class="fa fa fa-cloud-download"></i></button>
-                                    <div class="btn-group">
-                                        <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
-                                            <i class="fa fa-cog"></i>
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul role="menu" class="dropdown-menu dropdown-menu-right">
-                                            <li><a href="#">Action</a></li>
-                                            <li><a href="#">Another action</a></li>
-                                            <li><a href="#">Something else here</a></li>
-                                            <li class="divider"></li>
-                                            <li><a href="#">Separated link</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+<div class="panel-heading">
+    <h3 class="panel-title">有效订单</h3>
+</div>
+<div class="panel-body">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>编号</th>
+                    <th>手机号</th>
+                    <th>房间编号</th>
+                    <th>入住时间</th>
+                    <th>退房时间</th>
+                    <th>实收金额</th>
+                    <th>优惠金额</th>
+                    <th>应付金额</th>
+                    <th>下单时间</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Albert Desouza</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>2011/04/25</td>
+                    <td>$320,800</td>
+                    <td>1</td>
+                    <td>Albert Desouza</td>
+                    <td>System Architect</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div id="content-container">
+    <div id="page-content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Basic Data Tables with responsive plugin</h3>
                     </div>
-                    <div class="table-responsive">
-                        <table class="table table-striped">
+                    <div class="panel-body">
+                        <table id="demo-dt-basic" class="table table-striped table-bordered">
                             <thead>
                                 <tr>
-                                    <th>#</th>
-                                    <th>User</th>
-                                    <th>Country</th>
-                                    <th>Order Date</th>
-                                    <th>Amount</th>
-                                    <th>Status</th>
-                                    <th>Tracking Number</th>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th class="min-tablet">Office</th>
+                                    <th class="min-tablet">Extn.</th>
+                                    <th class="min-desktop">Start date</th>
+                                    <th class="min-desktop">Salary</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Steve N. Horton</td>
-                                    <td>USA</td>
-                                    <td><span class="text-muted"><i class="fa fa-clock-o"></i> April 22, 2016</span></td>
-                                    <td>$45.00</td>
-                                    <td>
-                                        <div class="label label-table label-success">Paid</div>
-                                    </td>
-                                    <td>-</td>
+                                    <td>Albert Desouza</td>
+                                    <td>System Architect</td>
+                                    <td>Edinburgh</td>
+                                    <td>61</td>
+                                    <td>2011/04/25</td>
+                                    <td>$320,800</td>
                                 </tr>
                                 <tr>
-                                    <td>2</td>
-                                    <td>Charles S Boyle</td>
-                                    <td>Germany</td>
-                                    <td><span class="text-muted"><i class="fa fa-clock-o"></i> April 24, 2016</span></td>
-                                    <td>$245.30</td>
-                                    <td>
-                                        <div class="label label-table label-dark">Unpaid</div>
-                                    </td>
-                                    <td>-</td>
+                                    <td>Melinda</td>
+                                    <td>Accountant</td>
+                                    <td>Tokyo</td>
+                                    <td>63</td>
+                                    <td>2011/07/25</td>
+                                    <td>$170,750</td>
                                 </tr>
                                 <tr>
-                                    <td>3</td>
-                                    <td>Lucy Doe</td>
-                                    <td>USA</td>
-                                    <td><span class="text-muted"><i class="fa fa-clock-o"></i> April 24, 2016</span></td>
-                                    <td>$38.00</td>
-                                    <td>
-                                        <div class="label label-table label-info">Shipped</div>
-                                    </td>
-                                    <td><i class="fa fa-plane"></i> CGX0089934571</td>
+                                    <td>Amy	Douglas</td>
+                                    <td>Junior Technical Author</td>
+                                    <td>San Francisco</td>
+                                    <td>66</td>
+                                    <td>2009/01/12</td>
+                                    <td>$86,000</td>
                                 </tr>
                                 <tr>
-                                    <td>4</td>
-                                    <td>Teresa L. Doe</td>
-                                    <td>Britain</td>
-                                    <td><span class="text-muted"><i class="fa fa-clock-o"></i> April 15, 2016</span></td>
-                                    <td>$77.99</td>
-                                    <td>
-                                        <div class="label label-table label-danger">Cancelled</div>
-                                    </td>
-                                    <td>-</td>
+                                    <td>Kirk Wong</td>
+                                    <td>Senior Javascript Developer</td>
+                                    <td>Edinburgh</td>
+                                    <td>22</td>
+                                    <td>2012/03/29</td>
+                                    <td>$433,060</td>
                                 </tr>
                                 <tr>
-                                    <td>5</td>
-                                    <td>Teresa L. Doe</td>
-                                    <td>Russia</td>
-                                    <td><span class="text-muted"><i class="fa fa-clock-o"></i> April 12, 2016</span></td>
-                                    <td>$18.00</td>
-                                    <td>
-                                        <div class="label label-table label-warning">Hold</div>
-                                    </td>
-                                    <td>-</td>
+                                    <td>Jamie Vasquez</td>
+                                    <td>Accountant</td>
+                                    <td>Tokyo</td>
+                                    <td>33</td>
+                                    <td>2008/11/28</td>
+                                    <td>$162,700</td>
                                 </tr>
+                                <tr>
+                                    <td>Corina T. Jones</td>
+                                    <td>Integration Specialist</td>
+                                    <td>New York</td>
+                                    <td>61</td>
+                                    <td>2012/12/02</td>
+                                    <td>$372,000</td>
+                                </tr>
+                                <tr>
+                                    <td>Sharon T. Waldron</td>
+                                    <td>Sales Assistant</td>
+                                    <td>San Francisco</td>
+                                    <td>59</td>
+                                    <td>2012/08/06</td>
+                                    <td>$137,500</td>
+                                </tr>
+
                             </tbody>
                         </table>
                     </div>
                 </div>
-                <!--===================================================-->
-                <!--End Data Table-->
             </div>
         </div>
-        <!--===================================================-->
-        <!--End page content-->
     </div>
 </div>
-
