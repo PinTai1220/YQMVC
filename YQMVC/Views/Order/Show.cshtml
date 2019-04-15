@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<dynamic>
 @{
     ViewBag.Title = "订单信息";
     Layout = "~/Views/Shared/_ParentPage1.cshtml";
@@ -17,24 +17,27 @@
                     <th>房间编号</th>
                     <th>入住时间</th>
                     <th>退房时间</th>
-                    <th>实收金额</th>
-                    <th>优惠金额</th>
                     <th>应付金额</th>
+                    <th>优惠金额</th>
+                    <th>实收金额</th>
                     <th>下单时间</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Albert Desouza</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>2011/04/25</td>
-                    <td>$320,800</td>
-                    <td>1</td>
-                    <td>Albert Desouza</td>
-                    <td>System Architect</td>
-                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>item.Order_Id</td>
+                        <td>item.Phone_Num</td>
+                        <td>item.Room_State</td>
+                        <td>item.CheckIn_Time</td>
+                        <td>item.Leave_Time</td>
+                        <td>item.Money_Should</td>
+                        <td>item.Money_Favorable</td>
+                        <td>item.Money_Received</td>
+                        <td>item.Order_Time</td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>

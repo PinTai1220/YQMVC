@@ -19,7 +19,7 @@ namespace YQMVC.Controllers
         {
             Dictionary<string, string> dic = new Dictionary<string, string>();
             dic.Add("", "");
-
+            
             string nonce = DataTransfer.GetNonce().ToString();
             string timestamp = DataTransfer.GetTimeStamp();
             string signature = DataTransfer.GetMD5Staff(dic, timestamp, nonce);
