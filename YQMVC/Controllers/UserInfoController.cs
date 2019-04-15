@@ -17,10 +17,16 @@ namespace YQMVC.Controllers
         // GET: UserInfo
         public ActionResult UserInfoIndex()
         {
-            //string json = HttpClientHelper.SendRequest("http://localhost:54830/api/UserInfos/Show", "get");
-            //List<UserInfos> ulist = JsonConvert.DeserializeObject<List<UserInfos>>(json); ;
-            //return View(ulist);
-            return View();
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+            dic.Add("", "");
+
+            string nonce = DataTransfer.GetNonce().ToString();
+            string timestamp = DataTransfer.GetTimeStamp();
+            string signature = DataTransfer.GetMD5Staff(dic, timestamp, nonce);
+
+            string result = HttpClientHelper.SendRequest("api/UserInfos/Show", "get", timestamp, nonce, signature, "");
+            List<UserInfos> userinfos = JsonConvert.DeserializeObject<List<UserInfos>>(result);
+            return View(userinfos);
         }
     }
 }
