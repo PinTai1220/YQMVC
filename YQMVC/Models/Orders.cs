@@ -20,5 +20,7 @@ namespace YQMVC.Models
         public DateTime Checkln_Time { get; set; }//入住时间
         public DateTime Leave_Time { get; set; }//退房时间
         public int Room_State { get; set; }//房间编号
+        public string Phone_Num { get; set; }
+        public int Room_Num { get; set; }
     }
 }

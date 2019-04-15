@@ -1,12 +1,11 @@
-﻿@model IEnumerable<dynamic>
+﻿@model IEnumerable<YQMVC.Models.Orders>
 @{
     ViewBag.Title = "订单信息";
     Layout = "~/Views/Shared/_ParentPage1.cshtml";
 }
-
 <div class="panel">
     <div class="panel-heading">
-        <h3 class="panel-title">Basic Data Tables with responsive plugin</h3>
+        <h3 class="panel-title">有效订单</h3>
     </div>
     <div class="panel-body">
         <table id="demo-dt-basic" class="table table-striped table-bordered">
@@ -14,31 +13,45 @@
                 <tr>
                     <th>编号</th>
                     <th>手机号</th>
-                    <th>房间编号</th>
+                    <th>房间号</th>
                     <th>入住时间</th>
                     <th>退房时间</th>
                     <th>应付金额</th>
                     <th>优惠金额</th>
                     <th>实收金额</th>
                     <th>下单时间</th>
+                    <th>操作</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model)
+                @if (Model != null)
                 {
-                    <tr>
-                        <td>item.Order_Id</td>
-                        <td>item.Phone_Num</td>
-                        <td>item.Room_State</td>
-                        <td>item.CheckIn_Time</td>
-                        <td>item.Leave_Time</td>
-                        <td>item.Money_Should</td>
-                        <td>item.Money_Favorable</td>
-                        <td>item.Money_Received</td>
-                        <td>item.Order_Time</td>
-                    </tr>
+                    foreach (var item in Model)
+                    {
+                        <tr id="@("tr"+item.Order_Id)">
+                            <td>@item.Order_Id</td>
+                            <td>@item.Phone_Num</td>
+                            <td>@item.Room_Num</td>
+                            <td>@item.Checkln_Time</td>
+                            <td>@item.Leave_Time</td>
+                            <td>@item.Money_Should</td>
+                            <td>@item.Money_Favorable</td>
+                            <td>@item.Money_Received</td>
+                            <td>@item.Order_Time</td>
+                            <td><button class="btn btn-danger fa" data-id="@item.Order_Id">入住</button></td>
+                        </tr>
+                    }
                 }
             </tbody>
         </table>
     </div>
 </div>
+<script>
+    $(document).ready(function () {
+        $("#demo-dt-basic").on("click", ".btn", function () {
+            let id = $(this).attr("data-id");
+            let elm = 'tr' + id;
+            $(elm).remove();
+        })
+    })
+</script>
