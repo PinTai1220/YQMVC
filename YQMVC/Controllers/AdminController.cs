@@ -49,25 +49,27 @@ namespace YQMVC.Controllers
             // 去掉前后空格
             userName = userName.TrimStart(' ').TrimEnd(' ');
             pwd = pwd.TrimStart(' ').TrimEnd(' ');
+
+
             #region Api 验证必填信息
             // 传入数据
             Dictionary<string, string> dic = new Dictionary<string, string>();
             dic.Add("", "");
 
-            string signature = DataTransfer.GetMD5Staff(dic);       // 获得公钥
-            int nonce = DataTransfer.GetNonce();            // 获取随机数
-            string timestamp = DataTransfer.GetTimeStamp();        // 获取时间戳
 
+            string nonce = DataTransfer.GetNonce().ToString();            // 获取随机数
+            string timestamp = DataTransfer.GetTimeStamp();        // 获取时间戳
+            string signature = DataTransfer.GetMD5Staff(dic, timestamp, nonce);       // 获得公钥
             #endregion
 
-            string result = HttpClientHelper.SendRequest("api/Admin/Show", "get", timestamp, nonce.ToString(), signature, "");
+            string result = HttpClientHelper.SendRequest("api/Admin/Show", "get", timestamp, nonce, signature, "");
             List<Admin> admins = JsonConvert.DeserializeObject<List<Admin>>(result);
 
             Admin admin = admins.Where(c => c.Admin_Name.Equals(userName) && c.Admin_Pwd.Equals(pwd)).FirstOrDefault();
 
             if (admin != null)
             {
-                return Redirect("/Home/Index");
+                return Redirect("/Admin/Index");
             }
             else
             {
