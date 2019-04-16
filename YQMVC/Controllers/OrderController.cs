@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using YQMVC.Helper;
 using YQMVC.Models;
 using Newtonsoft.Json;
+using YQMVC.Filter;
 
 namespace YQMVC.Controllers
 {
@@ -15,6 +16,7 @@ namespace YQMVC.Controllers
     public class OrderController : Controller
     {
         // GET: Order
+        [LoginAuthorization]
         public ActionResult Show()
         {
             Dictionary<string, string> dic = new Dictionary<string, string>();
@@ -33,6 +35,6 @@ namespace YQMVC.Controllers
     {
         已预定=0,
         已入住=1,
-        未入住=3       
+        空房=3       
     }
 }
