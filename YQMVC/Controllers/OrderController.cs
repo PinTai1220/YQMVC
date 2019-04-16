@@ -24,7 +24,7 @@ namespace YQMVC.Controllers
             string timestamp = DataTransfer.GetTimeStamp();
             string signature = DataTransfer.GetMD5Staff(dic, timestamp, nonce);
 
-            string result = HttpClientHelper.SendRequest("api/Order/Show", "get", timestamp, nonce, signature, "");
+            string result = HttpClientHelper.SendRequest("api/Orders/Show", "get", timestamp, nonce, signature, "");
             List<Orders> list = JsonConvert.DeserializeObject<List<Orders>>(result);
             return View(list);
         }
