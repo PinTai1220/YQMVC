@@ -43,7 +43,7 @@ namespace YQMVC.Models
             var result = "";
             var value = "";
             List<string> strs = new List<string>();
-            foreach (var item in dic)
+            foreach (var item in dic.OrderBy(c => c.Key))               // 根据 Key 值进行排序
             {
                 strs.Add(item.Key);
             }
