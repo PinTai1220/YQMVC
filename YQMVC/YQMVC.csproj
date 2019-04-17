@@ -182,6 +182,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Img\timg.jpg" />
+    <Content Include="Img\timg2.jpg" />
+    <Content Include="Img\timg3.jpg" />
     <Content Include="MoBanJS\css\bootstrap.css" />
     <Content Include="MoBanJS\css\bootstrap.min.css" />
     <Content Include="MoBanJS\css\demo\demo.css" />
