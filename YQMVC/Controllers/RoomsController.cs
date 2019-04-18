@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using YQMVC.Helper;
 using YQMVC.Models;
 using Newtonsoft.Json;
+using YQMVC.Filter;
 
 namespace YQMVC.Controllers
 {
@@ -15,6 +16,7 @@ namespace YQMVC.Controllers
     public class RoomsController : Controller
     {
         // GET: Rooms
+        [LoginAuthorization]
         public ActionResult RoomsIndex()
         {
             Dictionary<string, string> dic = new Dictionary<string, string>();
@@ -25,8 +27,20 @@ namespace YQMVC.Controllers
             string signature = DataTransfer.GetMD5Staff(dic, timestamp, nonce);
 
             string result = HttpClientHelper.SendRequest("api/Rooms/Show", "get", timestamp, nonce, signature, "");
+            string roomType = HttpClientHelper.SendRequest("api/RoomType/Show", "get", timestamp, nonce, signature, "");
             List<Rooms> rooms = JsonConvert.DeserializeObject<List<Rooms>>(result);
-            return View(rooms);
+            List<RoomType> types = JsonConvert.DeserializeObject<List<RoomType>>(roomType);
+            var roomResult = from c in rooms
+                             join s in types
+                             on c.RoomType_Id equals s.RoomType_Id
+                             select new RoomsData()
+                             {
+                                 Room_Num = c.Room_Num,
+                                 RoomType_Name = s.RoomType_Name,
+                                 Room_State = c.Room_State,
+                                 RoomType_Price = s.RoomType_Price
+                             };
+            return View(roomResult);
         }
     }
 }

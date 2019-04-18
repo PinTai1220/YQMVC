@@ -1,0 +1,43 @@
+﻿@model IEnumerable<YQMVC.Models.RoomsData>
+
+@{
+    ViewBag.Title = "RoomsIndex";
+    Layout = "~/Views/Shared/_ParentPage1.cshtml";
+}
+
+<div class="panel-heading">
+    <h3 class="panel-title">房间信息</h3>
+</div>
+<div class="panel-body">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>房间号</th>
+                    <th>房间名称</th>
+                    <th>房间价格</th>
+                    <th>房间状态</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+
+                    <tr>
+                        <td>@item.Room_Num</td>
+                        <td>@item.RoomType_Name</td>
+                        <td>@item.RoomType_Price</td>
+                        <td>
+                            @if (item.Room_State == 3)
+                            {
+                                @:空房
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

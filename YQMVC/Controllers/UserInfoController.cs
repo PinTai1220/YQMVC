@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using YQMVC.Models;
 using YQMVC.Helper;
 using Newtonsoft.Json;
+using YQMVC.Filter;
 
 namespace YQMVC.Controllers
 {
@@ -15,6 +16,7 @@ namespace YQMVC.Controllers
     public class UserInfoController : Controller
     {
         // GET: UserInfo
+        [LoginAuthorization]
         public ActionResult UserInfoIndex()
         {
             Dictionary<string, string> dic = new Dictionary<string, string>();
