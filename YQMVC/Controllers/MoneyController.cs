@@ -13,7 +13,6 @@ namespace YQMVC.Controllers
     public class MoneyController : Controller
     {
         // GET: Money
-        [LoginAuthorization]
         public ActionResult Index()
         {
             return View();

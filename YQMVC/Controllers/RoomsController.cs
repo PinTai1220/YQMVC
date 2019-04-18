@@ -16,7 +16,6 @@ namespace YQMVC.Controllers
     public class RoomsController : Controller
     {
         // GET: Rooms
-        [LoginAuthorization]
         public ActionResult RoomsIndex()
         {
             Dictionary<string, string> dic = new Dictionary<string, string>();
@@ -33,7 +32,7 @@ namespace YQMVC.Controllers
             var roomResult = from c in rooms
                              join s in types
                              on c.RoomType_Id equals s.RoomType_Id
-                             select new RoomsData()
+                             select new
                              {
                                  Room_Num = c.Room_Num,
                                  RoomType_Name = s.RoomType_Name,

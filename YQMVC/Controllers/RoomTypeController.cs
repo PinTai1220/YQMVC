@@ -13,7 +13,6 @@ namespace YQMVC.Controllers
     public class RoomTypeController : Controller
     {
         // GET: RoomType
-        [LoginAuthorization]
         public ActionResult Index()
         {
             return View();

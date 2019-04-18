@@ -157,6 +157,7 @@
     <Compile Include="Controllers\RoomsController.cs" />
     <Compile Include="Controllers\RoomTypeController.cs" />
     <Compile Include="Controllers\UserInfoController.cs" />
+    <Compile Include="Filter\LoginAuthorization.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
