@@ -16,6 +16,7 @@ namespace YQMVC.Controllers
     public class RoomsController : Controller
     {
         // GET: Rooms
+        [LoginAuthorization]
         public ActionResult RoomsIndex()
         {
             Dictionary<string, string> dic = new Dictionary<string, string>();

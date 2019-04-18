@@ -17,6 +17,7 @@ namespace YQMVC.Controllers
     public class AdminController : Controller
     {
         //主页显示
+        [LoginAuthorization]
         public ActionResult Index()
         {
             return View();
@@ -27,12 +28,14 @@ namespace YQMVC.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+        [AllowAnonymous]
         public ActionResult Login()
         {
             return View();
         }
         //登录方法
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult Login(string userName, string pwd)
         {
             // 去掉前后空格

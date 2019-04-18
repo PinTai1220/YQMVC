@@ -13,6 +13,7 @@ namespace YQMVC.Controllers
     public class RolesController : Controller
     {
         // GET: Roles
+        [LoginAuthorization]
         public ActionResult Index()
         {
             return View();

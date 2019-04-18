@@ -17,6 +17,7 @@ namespace YQMVC.Controllers
             return View();
         }
         [HttpGet]
+        [LoginAuthorization]
         public dynamic Get(string sstate,int page,int limit)
         {
             Dictionary<string, string> dic = new Dictionary<string, string>();

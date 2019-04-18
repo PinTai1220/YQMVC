@@ -16,11 +16,13 @@ namespace YQMVC.Controllers
     public class OrderController : Controller
     {
         // GET: Order
+        [LoginAuthorization]
         public ActionResult Show()
         {
             return View();
         }
         [HttpGet]
+        [LoginAuthorization]
         public dynamic Data(int page,int limit)
         {
             Dictionary<string, string> dic = new Dictionary<string, string>();
@@ -41,6 +43,7 @@ namespace YQMVC.Controllers
             return JsonConvert.SerializeObject(data);
         }
         [HttpPost]
+        [LoginAuthorization]
         public string Upt(int uid,string name,string sex,string cid)
         {
             UserInfos u = new UserInfos()
