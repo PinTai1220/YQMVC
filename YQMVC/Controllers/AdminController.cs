@@ -17,7 +17,7 @@ namespace YQMVC.Controllers
     public class AdminController : Controller
     {
         //主页显示
-        [AllowAnonymous]
+        [LoginAuthorization]
         public ActionResult Index()
         {
             return View();
