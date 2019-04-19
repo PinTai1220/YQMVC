@@ -61,7 +61,7 @@ namespace YQMVC.Controllers
 
             if (admin != null)
             {
-                Session["Admin"] = admin;
+                Session["Login"] = admin;
                 return Redirect("/Admin/Index");
             }
             else

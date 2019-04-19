@@ -52,7 +52,6 @@
             table.on('tool(demo)', function (obj) {
                 var data = obj.data;
                 if (obj.event === 'del') {
-                    console.log(obj);
                     let op = layer.open({
                         type: 1,
                         title: '开房记录登记',
@@ -64,15 +63,16 @@
                         resize: false,
                         content: '<div id="upt"><table><input type="hidden" id="uid" style="width:250px;height:300px;"/><tr><td>姓名:</td><td><input type="text" id="name"></td></tr><tr><td>性别:</td><td><input type="text" id="sex"></td></tr><tr><td>身份证号:</td><td><input type="text" id="cid"></td></tr></table></div>',
                         yes: function (index, layero) {
-                            var uid = layero.find('#uid');
-                            var name = layero.find('#name');
-                            var sex = layero.find('#sex');
-                            var cid = layero.find('#cid');
+                            var uid = data.User_Id;
+                            var name = layero.find('#name').val();
+                            var sex = layero.find('#sex').val();
+                            var cid = layero.find('#cid').val();
+                            var oid = data.Order_Id;
                             console.log(uid);
                             $.ajax({
                                 url: '/order/upt',
                                 type: 'post',
-                                //data: {uid,name,sex,cid},
+                                data: {'uid':uid,'name':name,'sex':sex,'cid':cid,'orderid':oid},
                                 success: function (e) {
                                     if (e > 0) {
                                         obj.del();
@@ -81,16 +81,6 @@
                                     }
                                 }
                             })
-                        },
-                        success: function (layero, index) {
-                            var body = layui.layer.getChildFrame('upt', index);
-                            console.log(layero);
-                            console.log(layui);
-                            if (data) {
-                                body.find("#uid").val(data.User_Id);
-                                body.find("#name").val(data.Phone_Num);
-
-                            }
                         }
                     });
                 };

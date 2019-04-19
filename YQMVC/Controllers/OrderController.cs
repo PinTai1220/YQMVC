@@ -39,20 +39,27 @@ namespace YQMVC.Controllers
                 code = 0,
                 msg = "",
                 count = list.Count(),
-                data = list
+                data = from a in list
+                       where a.Room_State==2
+                       select a
             };
             return JsonConvert.SerializeObject(data);
         }
         [HttpPost]
         [LoginAuthorization]
-        public string Upt(int uid, string name, string sex, string cid)
+        public string Upt(int uid, string name, string sex, string cid,int orderid)
         {
             UserInfos u = new UserInfos()
             {
                 UserInfo_Id = uid,
                 UserInfo_Name = name,
                 UserInfo_Sex = sex == "男" ? 0 : 1,
-                ID_Num = cid
+                ID_Num = cid,
+                Phone_Num = "",
+                Address = "",
+                HeadImg = "",
+                orderid = orderid,
+                state = 3
             };
             Dictionary<string, string> dic = new Dictionary<string, string>();
             dic.Add("UserInfo_Id", uid.ToString());
@@ -62,12 +69,15 @@ namespace YQMVC.Controllers
             dic.Add("Phone_Num", "");
             dic.Add("Address", "");
             dic.Add("HeadImg", "");
+            dic.Add("orderid", orderid.ToString());
+            dic.Add("state", "3");
+
 
 
             string nonce = DataTransfer.GetNonce().ToString();
             string timestamp = DataTransfer.GetTimeStamp();
             string signature = DataTransfer.GetMD5Staff(dic, timestamp, nonce);
-            string result = HttpClientHelper.SendRequest("api/Orders/Show", "post", timestamp, nonce, signature, JsonConvert.SerializeObject(u));
+            string result = HttpClientHelper.SendRequest("api/userinfos/Update", "post", timestamp, nonce, signature, JsonConvert.SerializeObject(u));
             return result;
         }
     }
