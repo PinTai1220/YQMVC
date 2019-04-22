@@ -18,7 +18,7 @@ namespace YQMVC.Controllers
         }
         [HttpGet]
         [LoginAuthorization]
-        public dynamic Get(string sstate,int page,int limit)
+        public dynamic Get(string state,int page,int limit)
         {
             Dictionary<string, string> dic = new Dictionary<string, string>();
             dic.Add("", "");
@@ -30,7 +30,7 @@ namespace YQMVC.Controllers
             string result = HttpClientHelper.SendRequest("api/rooms/Show", "get", timestamp, nonce, signature, "");
             List<Rooms> list = JsonConvert.DeserializeObject<List<Rooms>>(result);
             var da = (from a in list
-                     where a.RoomType_Name == sstate
+                     where a.RoomType_Name == state
                      select a).Skip(page*limit).Take(limit).ToList();
 
             var data = new

@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Show";
     Layout = "~/Views/Shared/_ParentPage1.cshtml";
 }
@@ -12,13 +11,13 @@
 </style>
 <div class="layui-tab layui-tab-card bar" lay-filter="test">
     <ul class="layui-tab-title">
-        <li class="layui-this">标间</li>
-        <li>大床房</li>
+        <li class="layui-this">商务标准间</li>
+        <li>温馨大床房</li>
         <li>情侣房</li>
     </ul>
     <div class="layui-tab-content" style="height: 100px;">
         <div class="layui-tab-item">
-            <table class="layui-table tablepage" lay-data="{url:'/Order/Data?state=标间', page:true, id:'1'}" lay-filter="demo">
+            <table class="layui-table tablepage" lay-data="{url:'/Rooms/Get?state=商务标准间', page:true, id:'1'}" lay-filter="demo">
                 <thead>
                     <tr>
                         <th lay-data="{align:'center',field:'Room_Num'}">房间号</th>
@@ -28,7 +27,7 @@
             </table>
         </div>
         <div class="layui-tab-item">
-            <table class="layui-table tablepage" lay-data="{url:'/Order/Data?state=大床房', page:true, id:'2'}" lay-filter="demo">
+            <table class="layui-table tablepage" lay-data="{url:'/rooms/get?state=温馨大床房', page:true, id:'2'}" lay-filter="demo">
                 <thead>
                     <tr>
                         <th lay-data="{align:'center',field:'Room_Num'}">房间号</th>
@@ -38,7 +37,7 @@
             </table>
         </div>
         <div class="layui-tab-item">
-            <table class="layui-table tablepage" lay-data="{url:'/Order/Data?state=情侣房', page:true, id:'3'}" lay-filter="demo">
+            <table class="layui-table tablepage" lay-data="{url:'/rooms/get?state=情侣房', page:true, id:'3'}" lay-filter="demo">
                 <thead>
                     <tr>
                         <th lay-data="{align:'center',field:'Room_Num'}">房间号</th>
@@ -50,14 +49,15 @@
     </div>
 </div>
 <script type="text/html" id="state">
-    {{# if(d.Room_State==='1')}}
-    {{ {'已预订'} }}
-    @*{{# else if(d.Room_State==='2')}}
-    {{ {'空'} }}
-    {{# else if(d.Room_State==='3')}}
-    {{ {'已入住'} }}
-    {{# else}}
-    {{ {'已退房'} }}*@
+    {{#  if(d.Room_State === 1){ }}
+    {{ '已预订'}}
+    {{#  } else if(d.Room_State === 2){ }}
+    {{ '空' }}
+    {{#  } else if(d.Room_State === 3){ }}
+    {{ '已入住'}}
+    {{# }else{ }}
+    {{ '已退房'}}
+    {{# } }}
 </script>
 <link href="~/layui-v2.4.5/layui/css/layui.css" rel="stylesheet" />
 <script src="~/layui-v2.4.5/layui/layui.all.js"></script>
@@ -73,4 +73,6 @@
             });
         });
     })
+
+ 
 </script>

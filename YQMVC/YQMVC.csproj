@@ -150,10 +150,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MoneyController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Controllers\RomeController.cs" />
     <Compile Include="Controllers\RoomsController.cs" />
     <Compile Include="Controllers\RoomTypeController.cs" />
     <Compile Include="Controllers\UserInfoController.cs" />
@@ -1013,14 +1013,16 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Shared\_ParentPage1.cshtml" />
     <Content Include="Views\Admin\Login.cshtml" />
     <Content Include="Views\Order\Show.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\UserInfo\UserInfoIndex.cshtml" />
     <Content Include="Views\Rooms\RoomsIndex.cshtml" />
+    <Content Include="Views\Rooms\Show.cshtml" />
+    <Content Include="Views\Rome\About.cshtml" />
+    <Content Include="Views\Rome\Contact.cshtml" />
+    <Content Include="Views\Rome\Show.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

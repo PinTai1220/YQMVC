@@ -35,12 +35,46 @@ namespace YQMVC.Controllers
                              on c.RoomType_Id equals s.RoomType_Id
                              select new
                              {
-                                 Room_Num = c.Room_Num,
-                                 RoomType_Name = s.RoomType_Name,
-                                 Room_State = c.Room_State,
-                                 RoomType_Price = s.RoomType_Price
+                                 c.Room_Num,
+                                 s.RoomType_Name,
+                                 c.Room_State,
+                                 s.RoomType_Price
                              };
             return View(roomResult);
+        }
+        [LoginAuthorization]
+        public ActionResult Show()
+        {
+            return View();
+        }
+        [HttpGet]
+        [LoginAuthorization]
+        public dynamic Get(string state, int page, int limit)
+        {
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+            dic.Add("", "");
+
+
+            string nonce = DataTransfer.GetNonce().ToString();
+            string timestamp = DataTransfer.GetTimeStamp();
+            string signature = DataTransfer.GetMD5Staff(dic, timestamp, nonce);
+
+
+            string result = HttpClientHelper.SendRequest("api/rooms/Show", "get", timestamp, nonce, signature, "");
+            List<Rooms> list = JsonConvert.DeserializeObject<List<Rooms>>(result);
+            var da = (from a in list
+                      where a.RoomType_Name == state
+                      select a).ToList();
+            var ta = da.Skip((page-1) * limit).Take(limit).ToList();
+
+            var data = new
+            {
+                code = 0,
+                msg = "",
+                count = da.Count(),
+                data = ta
+            };
+            return JsonConvert.SerializeObject(data);
         }
     }
 }
