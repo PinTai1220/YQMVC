@@ -1,11 +1,82 @@
 ﻿
 @{
-    ViewBag.Title = "Money";
+    ViewBag.Title = "营业额";
     Layout = "~/Views/Shared/_ParentPage1.cshtml";
 }
 
-<h2>Money</h2>
+<div id="wrapper">
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-xs-6 col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-body easypiechart-panel">
+                        <h4>用户</h4>
+                        <div class="easypiechart" id="easypiechart-blue" data-percent="20">
+                            <span class="percent">20%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-body easypiechart-panel">
+                        <h4>订单量</h4>
+                        <div class="easypiechart" id="easypiechart-orange" data-percent="33">
+                            <span class="percent">33%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-body easypiechart-panel">
+                        <h4>利润</h4>
+                        <div class="easypiechart" id="easypiechart-teal" data-percent="40">
+                            <span class="percent">40%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-body easypiechart-panel">
+                        <h4>现有空房量</h4>
+                        <div class="easypiechart" id="easypiechart-red" data-percent="80">
+                            <span class="percent">80%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
-fsadfasdfaewfw
+            <div class="main-page-charts">
+                <div class="main-page-chart-layer1">
+                    <div class="col-md-6" style="margin-left:420px">
+                        <div class="glocy-chart">
+                            <div class="span-2c">
+                                <h3 class="tlt">销售分析</h3>
+                                <canvas id="bar" height="300" width="400" style="width: 350px; height: 300px;"></canvas>
+                                <script>
+                                    var barChartData = {
+                                        labels: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"],
+                                        datasets: [
+                                            {
+                                                fillColor: "#FC8213",
+                                                data: [65, 59, 90, 81, 56, 55, 40]
+                                            },
+                                        ]
+
+                                    };
+                                    new Chart(document.getElementById("bar").getContext("2d")).Bar(barChartData);
+
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 

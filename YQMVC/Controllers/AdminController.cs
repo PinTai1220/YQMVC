@@ -67,7 +67,7 @@ namespace YQMVC.Controllers
             }
             else
             {
-                return Content("<script>alert('密码或用户名错误！');location.reload()</script>");
+                return Content("<script>alert('密码或用户名错误！');location.reload();</script>");
             }
         }
 

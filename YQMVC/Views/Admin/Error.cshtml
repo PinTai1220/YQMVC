@@ -1,69 +1,75 @@
 ﻿
 @{
-    ViewBag.Title = "Error";
-    Layout = "~/Views/Shared/_ParentPage1.cshtml";
+    Layout = null;
 }
-<style>
-    #popupcontent {
-        position: absolute;
-        visibility: hidden;
-        overflow: hidden;
-        border: 1px solid #00ffff;
-        background-color: #0094ff;
-        border: 1px solid #333;
-        padding: 5px;
-    }
-</style>
-
-<style>
-    #win {
-        /*窗口的高度和宽度*/
-        width: 500px;
-        height: 300px;
-        /*窗口的位置*/
-        position: absolute;
-        top: 200px;
-        left: 700px;
-        /*开始时窗口不可见*/
-        display: none;  
-        color: blueviolet;
-        padding-left: 3px;
-    }
-    #titel
-    { 
-        /*窗口的高度和宽度*/
-        width:360px;
-        height: 100px;
-        margin-top:100px;
-        margin-left:60px; 
-        color: blueviolet;
-        padding-left: 3px;
-        font-size:larger;
-        font-weight:bolder;
-    }
-</style>
-
-<div id="win">
-    <div id="titel">
-        <span>
-            对不起您无权访问该页面，将在三秒后跳回<a href="/Admin/Index">主页</a>
-        </span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 无权访问 </title>
+    <link rel="shortcut icon" href="~/MoBanJS/img/favicon.ico">
+    <!--STYLESHEET-->
+    <!--=================================================-->
+    <!--Roboto Slab Font [ OPTIONAL ] -->
+    <link href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:500,400italic,100,700italic,300,700,500italic,400" rel="stylesheet">
+    <!--Bootstrap Stylesheet [ REQUIRED ]-->
+    <link href="~/MoBanJS/css/bootstrap.min.css" rel="stylesheet">
+    <!--Jasmine Stylesheet [ REQUIRED ]-->
+    <link href="~/MoBanJS/css/style.css" rel="stylesheet">
+    <!--Font Awesome [ OPTIONAL ]-->
+    <link href="~/MoBanJS/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!--Switchery [ OPTIONAL ]-->
+    <link href="~/MoBanJS/plugins/switchery/switchery.min.css" rel="stylesheet">
+    <!--Bootstrap Select [ OPTIONAL ]-->
+    <link href="~/MoBanJS/plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
+    <!--Demo [ DEMONSTRATION ]-->
+    <link href="~/MoBanJS/css/demo/jasmine.css" rel="stylesheet">
+    <!--SCRIPT-->
+    <!--=================================================-->
+    <!--Page Load Progress Bar [ OPTIONAL ]-->
+    <link href="~/MoBanJS/plugins/pace/pace.min.css" rel="stylesheet">
+    <script src="~/MoBanJS/plugins/pace/pace.min.js"></script>
+</head>
+<body>
+    <!-- START OF CONTAINER -->
+    <!--===================================================-->
+    <div class="cls-container">
+        <!-- CONTENT -->
+        <!--===================================================-->
+        <div class="cls-content">
+            <div class="error-full-page">
+                <!-- start: 404 -->
+                <div class="col-sm-12 page-error pad-30">
+                    <div class="error-number text-primary"> 进不去啊 </div>
+                    <div class="error-details col-sm-6 col-sm-offset-3">
+                        <h3> 对不起！您无权访问该页面</h3>
+                        <a href="/Admin/Index" class="btn btn-danger btn-return"> <i class="fa fa-home"> </i>返回主页</a>
+                    </div>
+                </div>
+                <!-- end: 404 -->
+            </div>
+        </div>
+        <!--===================================================-->
+        <!-- CONTENT -->
     </div>
-</div>
 
 
-<script>
-    $(function () {
-        //setTimeout("location.href='/Admin/Index'", 2000);
-        var winNode = $("#win");
-        //方法1：利用js修改css的值，实现显示效果
-         winNode.css("display", "block");
-        //方法2：利用jquery的show方法，实现显示效果
-        //winNode.show("slow");
-        //方法3：利用jquery的fadeIn方法或slideDown方法实现动画效果
-        //winNode.fadeIn(2000);
-        //winNode.slideDown(2000);
 
-        setTimeout("location.href='/Admin/Index'",3000)
-    });
-</script>
+    <!--===================================================-->
+    <!-- END OF CONTAINER -->
+    <!--JAVASCRIPT-->
+    <!--=================================================-->
+    <!--jQuery [ REQUIRED ]-->
+    <script src="~/MoBanJS/js/jquery-2.1.1.min.js"></script>
+    <!--BootstrapJS [ RECOMMENDED ]-->
+    <script src="~/MoBanJS/js/bootstrap.min.js"></script>
+    <!--Fast Click [ OPTIONAL ]-->
+    <script src="~/MoBanJS/plugins/fast-click/fastclick.min.js"></script>
+    <!--Switchery [ OPTIONAL ]-->
+    <script src="~/MoBanJS/plugins/switchery/switchery.min.js"></script>
+    <!--Bootstrap Select [ OPTIONAL ]-->
+    <script src="~/MoBanJS/plugins/bootstrap-select/bootstrap-select.min.js"></script>
+</body>
+</html>

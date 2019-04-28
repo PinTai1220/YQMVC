@@ -1,14 +1,106 @@
-﻿<!DOCTYPE html>
-<html>
+﻿
+@*<div id="win">
+        <div id="titel">
+            <span>
+                对不起您无权访问该页面，将在三秒后跳回<a href="/Admin/Index">主页</a>
+            </span>
+        </div>
+    </div>*@
+<style>
+    #win {
+        /*窗口的高度和宽度*/
+        width: 500px;
+        height: 300px;
+        /*窗口的位置*/
+        position: absolute;
+        top: 200px;
+        left: 700px;
+        /*开始时窗口不可见*/
+        display: none;
+        color: blueviolet;
+        padding-left: 3px;
+    }
+
+    #titel {
+        /*窗口的高度和宽度*/
+        width: 360px;
+        height: 100px;
+        margin-top: 100px;
+        margin-left: 60px;
+        color: blueviolet;
+        padding-left: 3px;
+        font-size: larger;
+        font-weight: bolder;
+    }
+</style>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width" />
-    <title>错误</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 无权访问 </title>
+    <link rel="shortcut icon" href="~/MoBanJS/img/favicon.ico">
+    <!--STYLESHEET-->
+    <!--=================================================-->
+    <!--Roboto Slab Font [ OPTIONAL ] -->
+    <link href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:500,400italic,100,700italic,300,700,500italic,400" rel="stylesheet">
+    <!--Bootstrap Stylesheet [ REQUIRED ]-->
+    <link href="~/MoBanJS/css/bootstrap.min.css" rel="stylesheet">
+    <!--Jasmine Stylesheet [ REQUIRED ]-->
+    <link href="~/MoBanJS/css/style.css" rel="stylesheet">
+    <!--Font Awesome [ OPTIONAL ]-->
+    <link href="~/MoBanJS/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!--Switchery [ OPTIONAL ]-->
+    <link href="~/MoBanJS/plugins/switchery/switchery.min.css" rel="stylesheet">
+    <!--Bootstrap Select [ OPTIONAL ]-->
+    <link href="~/MoBanJS/plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
+    <!--Demo [ DEMONSTRATION ]-->
+    <link href="~/MoBanJS/css/demo/jasmine.css" rel="stylesheet">
+    <!--SCRIPT-->
+    <!--=================================================-->
+    <!--Page Load Progress Bar [ OPTIONAL ]-->
+    <link href="~/MoBanJS/plugins/pace/pace.min.css" rel="stylesheet">
+    <script src="~/MoBanJS/plugins/pace/pace.min.js"></script>
 </head>
 <body>
-    <hgroup>
-        <h1>错误。</h1>
-        <h2>处理你的请求时出错。</h2>
-    </hgroup>
+    <!-- START OF CONTAINER -->
+    <!--===================================================-->
+    <div class="cls-container">
+        <!-- CONTENT -->
+        <!--===================================================-->
+        <div class="cls-content">
+            <div class="error-full-page">
+                <!-- start: 404 -->
+                <div class="col-sm-12 page-error pad-30">
+                    <div class="error-number text-primary"> 进不去啊 </div>
+                    <div class="error-details col-sm-6 col-sm-offset-3">
+                        <h3> 对不起！您无权访问该页面，将在三秒后返回<a href="/Admin/Index">主页</a></h3>
+                    </div>
+                </div>
+                <!-- end: 404 -->
+            </div>
+        </div>
+        <!--===================================================-->
+        <!-- CONTENT -->
+    </div>
+
+
+
+
+    <!--===================================================-->
+    <!-- END OF CONTAINER -->
+    <!--JAVASCRIPT-->
+    <!--=================================================-->
+    <!--jQuery [ REQUIRED ]-->
+    <script src="~/MoBanJS/js/jquery-2.1.1.min.js"></script>
+    <!--BootstrapJS [ RECOMMENDED ]-->
+    <script src="~/MoBanJS/js/bootstrap.min.js"></script>
+    <!--Fast Click [ OPTIONAL ]-->
+    <script src="~/MoBanJS/plugins/fast-click/fastclick.min.js"></script>
+    <!--Switchery [ OPTIONAL ]-->
+    <script src="~/MoBanJS/plugins/switchery/switchery.min.js"></script>
+    <!--Bootstrap Select [ OPTIONAL ]-->
+    <script src="~/MoBanJS/plugins/bootstrap-select/bootstrap-select.min.js"></script>
 </body>
 </html>
