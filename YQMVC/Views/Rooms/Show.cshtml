@@ -14,6 +14,10 @@
         <li class="layui-this">商务标准间</li>
         <li>温馨大床房</li>
         <li>情侣房</li>
+        <li>普通单人间</li>
+        <li>海洋主题套房</li>
+        <li>樱花主题套房</li>
+        <li>豪华客房</li>
     </ul>
     <div class="layui-tab-content" style="height: 100px;">
         <div class="layui-tab-item">
@@ -46,13 +50,53 @@
                 </thead>
             </table>
         </div>
+        <div class="layui-tab-item">
+            <table class="layui-table tablepage" lay-data="{url:'/rooms/get?state=普通单人间', page:true, id:'4'}" lay-filter="demo">
+                <thead>
+                    <tr>
+                        <th lay-data="{align:'center',field:'Room_Num'}">房间号</th>
+                        <th lay-data="{align:'center',field:'Room_State',templet:'#state'}">状态</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="layui-tab-item">
+            <table class="layui-table tablepage" lay-data="{url:'/rooms/get?state=海洋主题套房', page:true, id:'5'}" lay-filter="demo">
+                <thead>
+                    <tr>
+                        <th lay-data="{align:'center',field:'Room_Num'}">房间号</th>
+                        <th lay-data="{align:'center',field:'Room_State',templet:'#state'}">状态</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="layui-tab-item">
+            <table class="layui-table tablepage" lay-data="{url:'/rooms/get?state=樱花主题套房', page:true, id:'6'}" lay-filter="demo">
+                <thead>
+                    <tr>
+                        <th lay-data="{align:'center',field:'Room_Num'}">房间号</th>
+                        <th lay-data="{align:'center',field:'Room_State',templet:'#state'}">状态</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="layui-tab-item">
+            <table class="layui-table tablepage" lay-data="{url:'/rooms/get?state=豪华客房', page:true, id:'7'}" lay-filter="demo">
+                <thead>
+                    <tr>
+                        <th lay-data="{align:'center',field:'Room_Num'}">房间号</th>
+                        <th lay-data="{align:'center',field:'Room_State',templet:'#state'}">状态</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
     </div>
 </div>
 <script type="text/html" id="state">
     {{#  if(d.Room_State === 1){ }}
     {{ '已预订'}}
     {{#  } else if(d.Room_State === 2){ }}
-    {{ '空' }}
+    {{ '空房' }}
     {{#  } else if(d.Room_State === 3){ }}
     {{ '已入住'}}
     {{# }else{ }}
