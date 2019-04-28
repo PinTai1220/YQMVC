@@ -40,8 +40,17 @@ namespace YQMVC.Controllers
                 msg = "",
                 count = list.Count(),
                 data = from a in list
-                       where a.Room_State == 2
-                       select a
+                       select new
+                       {
+                            UserInfo_Name = a.UserInfo_Name,
+                            Phone_Num = a.Phone_Num,
+                            Checkln_Time=a.CheckIn_Time.Year+"-"+a.CheckIn_Time.Month+"-"+a.CheckIn_Time.Day,
+                            Leave_Time="",
+                            Money_Should=a.Money_Should,
+                            Money_Favorable=a.Money_Favorable,
+                            Money_Received=a.Money_Received,
+                            Order_Time=a.Order_Time.Year+"-"+a.Order_Time.Month+"-"+a.Order_Time.Day,
+                       }
             };
             return JsonConvert.SerializeObject(data);
         }

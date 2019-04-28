@@ -22,5 +22,6 @@ namespace YQMVC.Models
         public int Room_State { get; set; }//房间编号
         public string Phone_Num { get; set; }
         public int Room_Num { get; set; }
+        public string UserInfo_Name { get; set; }
     }
 }
