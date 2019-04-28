@@ -40,14 +40,14 @@ namespace YQMVC.Controllers
                 msg = "",
                 count = list.Count(),
                 data = from a in list
-                       where a.Room_State==2
+                       where a.Room_State == 2
                        select a
             };
             return JsonConvert.SerializeObject(data);
         }
         [HttpPost]
         [LoginAuthorization]
-        public string Upt(int uid, string name, string sex, string cid,int orderid)
+        public string Upt(int uid, string name, string sex, string cid, int orderid)
         {
             UserInfos u = new UserInfos()
             {
@@ -80,6 +80,13 @@ namespace YQMVC.Controllers
             string result = HttpClientHelper.SendRequest("api/userinfos/Update", "post", timestamp, nonce, signature, JsonConvert.SerializeObject(u));
             return result;
         }
+
+        [RolesCheckIn]
+        [LoginAuthorization]
+        public ActionResult Money()
+        {
+            return View();
+        }
     }
-   
+
 }

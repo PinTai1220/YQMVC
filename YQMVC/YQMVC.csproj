@@ -158,6 +158,7 @@
     <Compile Include="Controllers\RoomTypeController.cs" />
     <Compile Include="Controllers\UserInfoController.cs" />
     <Compile Include="Filter\LoginAuthorization.cs" />
+    <Compile Include="Filter\RolesCheckInAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1023,6 +1024,8 @@
     <Content Include="Views\Rome\About.cshtml" />
     <Content Include="Views\Rome\Contact.cshtml" />
     <Content Include="Views\Rome\Show.cshtml" />
+    <Content Include="Views\Order\Money.cshtml" />
+    <Content Include="Views\Admin\Error.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -31,6 +31,7 @@ namespace YQMVC.Controllers
         [AllowAnonymous]
         public ActionResult Login()
         {
+            Session["Login"] = null;
             return View();
         }
         //登录方法
@@ -68,6 +69,12 @@ namespace YQMVC.Controllers
             {
                 return Content("<script>alert('密码或用户名错误！');location.reload()</script>");
             }
+        }
+
+        [LoginAuthorization]
+        public ActionResult Error()
+        {
+            return View();
         }
 
     }

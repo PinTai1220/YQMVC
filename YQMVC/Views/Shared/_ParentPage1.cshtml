@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@using YQMVC.Models
+@{
+    dynamic result = Session["Login"];
+    Admin admin = result;
+}
+
+<!DOCTYPE html>
 
 <html>
 <head lang="en">
@@ -49,12 +55,12 @@
                         <li id="dropdown-user" class="dropdown">
                             <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
                                 <span class="pull-right"> <img class="img-circle img-user media-object" src="~/MoBanJS/img/av1.png" alt="Profile Picture"> </span>
-                                <div class="username hidden-xs">约翰多易</div>
+                                <div class="username hidden-xs">@admin.Admin_Name</div>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right with-arrow">
                                 <ul class="head-list">
                                     <li>
-                                        <a href="#"> <i class="fa fa-sign-out fa-fw"></i> 登出 </a>
+                                        <a href="/Admin/Login"> <i class="fa fa-sign-out fa-fw"></i> 登出 </a>
                                     </li>
                                 </ul>
                             </div>
@@ -96,6 +102,7 @@
                                     <li> <a href="/UserInfo/UserInfoIndex"> <i class="fa fa-edit"></i> <span class="menu-title"> 用户信息 </span> </a> </li>
                                     <li> <a href="/Order/Show"> <i class="fa fa-briefcase"></i> <span class="menu-title"> 订单信息 </span> </a> </li>
                                     <li> <a href="/Rooms/Show"> <i class="fa fa-university"></i> <span class="menu-title"> 房间信息 </span> </a> </li>
+                                    <li> <a href="/Order/Money"> <i class="fa fa-university"></i> <span class="menu-title"> 营业额 </span> </a> </li>
                                 </ul>
                                 <div class="mainnav-widget">
                                     <div class="show-small">
