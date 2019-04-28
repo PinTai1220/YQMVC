@@ -21,8 +21,8 @@
                     <th lay-data="{align:'center',field:'Order_Id'}">编号</th>
                     <th lay-data="{align:'center',field:'Phone_Num'}">手机号</th>
                     <th lay-data="{align:'center',field:'Room_Num'}">房间号</th>
-                    <th lay-data="{align:'center',field:'Checkln_Time',templet:'#time'}">入住时间</th>
-                    <th lay-data="{align:'center',field:'Leave_Time',templet:'#time'}">退房时间</th>
+                    <th lay-data="{align:'center',field:'Checkln_Time',templet:'#Ctime'}">入住时间</th>
+                    <th lay-data="{align:'center',field:'Leave_Time',templet:'#Ltime'}">退房时间</th>
                     <th lay-data="{align:'center',field:'Money_Should'}">应付金额</th>
                     <th lay-data="{align:'center',field:'Money_Favorable'}">优惠金额</th>
                     <th lay-data="{align:'center',field:'Money_Received', sort: true}">实收金额</th>
@@ -35,9 +35,19 @@
         <script type="text/html" id="barDemo">
             <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">入住</a>
         </script>
-        <script type="text/html" id="time">
-            {{# if(d.Checkln_Time==='0001-01-01T00:00:00'||d.Leave_Time==='0001-01-01T00:00:00')}}
-            {{''}}
+        <script type="text/html" id="Ctime">
+            {{#  if(d.CheckIn_Time==='0001-01-01T00:00:00'){ }}
+            {{ '' }}
+            {{#  } else { }}
+            {{ d.CheckIn_Time }}
+            {{#  } }}
+        </script>
+        <script type="text/html" id="Ltime">
+            {{#  if(d.Leave_Time==='0001-01-01T00:00:00'){ }}
+            {{ '' }}
+            {{#  } else { }}
+            {{ d.Leave_Time }}
+            {{#  } }}
         </script>
     </div>
 </div>
