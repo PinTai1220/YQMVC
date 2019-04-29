@@ -34,19 +34,14 @@ namespace YQMVC.Controllers
 
             string result = HttpClientHelper.SendRequest("api/UserInfos/Show", "get", timestamp, nonce, signature, "");
             List<UserInfos> userinfos = JsonConvert.DeserializeObject<List<UserInfos>>(result);
+            int count = userinfos.Count();
+            var dt= userinfos.Skip((page - 1) * limit).Take(limit).ToList();
             var data = new
             {
                 code = 0,
                 msg = "",
-                count = userinfos.Count(),
-                data = from a in userinfos
-                       select new
-                       {
-                           UserInfo_Name = a.UserInfo_Name,
-                           Sex = a.UserInfo_Sex == 0 ? "男" : "女",
-                           ID_Num = a.ID_Num,
-                           Phone_Num = a.Phone_Num
-                       }
+                count,
+                data = dt
             };
             return JsonConvert.SerializeObject(data);
         }
